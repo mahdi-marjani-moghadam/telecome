@@ -16,7 +16,7 @@ class BlogController extends Controller
     {
 
 
-        return view('admin.blog.index');
+        return view('blog.index');
     }
 
     /**
@@ -83,5 +83,28 @@ class BlogController extends Controller
     public function destroy(Blog $blog)
     {
         //
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+    public function indexAdmin()
+    {
+
+//        $blog = Blog::all(); // elequent orm
+
+        $blog = Blog::orderBy('created_at','desc')->paginate();
+//        dd($blog);
+//        dd($blog);
+
+        return view('admin.blog.index',compact('blog'));
     }
 }
