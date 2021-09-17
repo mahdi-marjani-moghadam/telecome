@@ -3,6 +3,7 @@
 @section('content')
 
     <div class="container" >
+
         <div class="row align-items-center p-5">
             <div class="col">
 
@@ -40,15 +41,13 @@
             </div>
         </div>
 
-
         <div class="card text-center p-5">
             <div class="card-body">
                 <h4 class="card-title">Unsicher, welche Bandbreite am besten passt?</h4>
-                <p class="card-text">Unsere Speed-Berater empfielt Ihnen wenigen Schritten die passende Internet.</p>
+                <p class="card-text center">Unsere Speed-Berater empfielt Ihnen wenigen Schritten die passende Internet.</p>
                 <a href="#" class="btn btn-primary">Los geht´s</a>
             </div>
         </div>
-
 
         <div class="row g-0" >
             <div class="col-6">
