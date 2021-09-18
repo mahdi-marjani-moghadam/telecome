@@ -8,25 +8,25 @@ use Illuminate\Support\Facades\Route;
 
 
 
-Route::prefix('/')->group(function (){
+Route::prefix('/')->group(function () {
 
-    Route::get('', [IndexController::class,'index']);
+    Route::get('', [IndexController::class, 'index']);
 
-    Route::get('aboutus', [AboutusController::class,'index']);
+    Route::get('aboutus', [AboutusController::class, 'index']);
+    Route::get('blog/{blog}', [BlogController::class, 'show']);
 
-    Route:: get('start', function (){
+    Route::get('start', function () {
         return 'Startseite';
     });
-    Route::get('simkarte', function (){
+    Route::get('simkarte', function () {
         return 'Simmmm';
     });
-    Route::get('anmeldung', function (){
+    Route::get('anmeldung', function () {
         return 'Anmeldung';
     });
-    Route::get('kontact', function (){
+    Route::get('kontact', function () {
         return 'Kontakt';
     });
-
 });
 
 //Route::get('blog', [,'index']);
@@ -34,10 +34,13 @@ Route::prefix('/')->group(function (){
 
 
 Route::prefix('admin')->group(function () {
+
+    Route::get('/', [IndexController::class, 'indexAdmin']);
+
     Route::get('blog', [BlogController::class, 'indexAdmin']);
-//    Route::get('blog/create', [BlogController::class, 'createAdmin']); // form add
-//    Route::post('blog/create', [BlogController::class, 'storeAdmin']); // add
-//    Route::get('blog/{blog}', [BlogController::class, 'editAdmin']); // form edit
-//    Route::patch('blog/{blog}', [BlogController::class, 'updateAdmin']); // edit
-//    Route::delete('blog/{blog}', [BlogController::class, 'destroyAdmin']); // delete
+    Route::get('blog/create', [BlogController::class, 'createAdmin'])->name('admin.blog.create'); // form add
+    Route::post('blog/create', [BlogController::class, 'storeAdmin'])->name('admin.blog.store'); // add
+    Route::get('blog/{blog}', [BlogController::class, 'editAdmin'])->name('admin.blog.edit'); // form edit
+    Route::patch('blog/{blog}', [BlogController::class, 'updateAdmin'])->name('admin.blog.update'); // edit
+    Route::delete('blog/{blog}', [BlogController::class, 'destroyAdmin'])->name('admin.blog.destroy'); // delete
 });
