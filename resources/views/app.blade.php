@@ -24,25 +24,41 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="/">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="aboutus">About Us</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="blog">Blog</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="news">News</a>
-                        </li>
+                    <div class="d-flex flex-row-reverse bd-highlight">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0" >
 
-                    </ul>
-                    <div class="d-flex">
-                        ss
+                                <li class="nav-item ">
+                                    <a class="nav-link active" aria-current="page" href="/">Startseite</a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/simkarte">Sim-Karte</a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/anmeldung">Anmeldung</a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/aboutus">Über uns</a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/blog">Blog</a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/news">News</a>
+                                </li>
+
+                                <li class="nav-item">
+                                <a class="nav-link" href="/kontakt">Kontakt</a>
+                            </li>
+
+
+                        </ul>
+
                     </div>
-
                 </div>
             </div>
         </nav>
