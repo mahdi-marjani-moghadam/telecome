@@ -1,14 +1,14 @@
 @extends('admin.app')
 
 @section('content')
-    <h1></h1>
+    <h1> {{ Request()->is('*create*') ? 'Create':'Update'}} Form</h1>
     <div class="row">
         <div class=" col-12">
             @if ($errors->any())
                 {!! implode('', $errors->all('<div class="alert alert-danger">:message</div>')) !!}
             @endif
             <form
-                action="{{ Request()->is('*create*') ? route('admin.company.store') : route('admin.company.edit', $blog->id) }}"
+                action="{{ Request()->is('*create*') ? route('admin.blog.store') : route('admin.blog.edit', $blog->id) }}"
                 method="POST" enctype="multipart/form-data">
                 @if (Request()->is('*edit*'))
                     @method('PATCH')
@@ -39,7 +39,7 @@
                 <div class="row">
                     <div class="col-md-12">
 
-                        <button type="submit" class="btn btn-success  @if (!$ltr) pull-right @endif mat-btn ">
+                        <button type="submit" class="btn btn-success   mat-btn ">
 
                             @if (Request()->is('*create*'))
                                 @lang('messages.add')

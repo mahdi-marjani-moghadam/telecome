@@ -49,7 +49,8 @@ class BlogController extends Controller
      */
     public function show(Blog $blog)
     {
-        //
+        dd(1);
+        return view('blogShow',compact('blog'));
     }
 
     /**

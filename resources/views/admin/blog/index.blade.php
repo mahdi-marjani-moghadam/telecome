@@ -4,6 +4,7 @@
     <h1>Blog list</h1>
     <div class="row">
         <div class=" col-12">
+            <a class="btn btn-success" href="{{ route('admin.blog.create') }}">Add</a>
             @foreach($blog as $item)
                 <div class="row ">
                     <div class="col ">
