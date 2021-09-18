@@ -29,19 +29,19 @@
                     <ul class="navbar-nav mb-2 mb-lg-0" >
 
                         <li class="nav-item ">
-                            <a class="nav-link active" aria-current="page" href="/">Startseite</a>
+                            <a class="nav-link active" aria-current="page" href="{{ url('/') }}">Startseite</a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="/simkarte">Sim-Karte</a>
+                            <a class="nav-link" href="{{ url('simkarte') }}">Sim-Karte</a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="/anmeldung">Anmeldung</a>
+                            <a class="nav-link" href="{{ url('anmeldung') }}">Anmeldung</a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="/aboutus">Über uns</a>
+                            <a class="nav-link" href="{{ url('aboutus') }}">Über uns</a>
                         </li>
 
                         <li class="nav-item">
