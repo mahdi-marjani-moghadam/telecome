@@ -34,10 +34,13 @@ Route::prefix('/')->group(function (){
 
 
 Route::prefix('admin')->group(function () {
+
+    Route::get('/', [IndexController::class, 'indexAdmin']);
+
     Route::get('blog', [BlogController::class, 'indexAdmin']);
-//    Route::get('blog/create', [BlogController::class, 'createAdmin']); // form add
-//    Route::post('blog/create', [BlogController::class, 'storeAdmin']); // add
-//    Route::get('blog/{blog}', [BlogController::class, 'editAdmin']); // form edit
-//    Route::patch('blog/{blog}', [BlogController::class, 'updateAdmin']); // edit
-//    Route::delete('blog/{blog}', [BlogController::class, 'destroyAdmin']); // delete
+   Route::get('blog/create', [BlogController::class, 'createAdmin']); // form add
+   Route::post('blog/create', [BlogController::class, 'storeAdmin']); // add
+   Route::get('blog/{blog}', [BlogController::class, 'editAdmin']); // form edit
+   Route::patch('blog/{blog}', [BlogController::class, 'updateAdmin']); // edit
+   Route::delete('blog/{blog}', [BlogController::class, 'destroyAdmin']); // delete
 });

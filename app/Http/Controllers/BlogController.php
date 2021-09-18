@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Blog;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Lang;
 
 class BlogController extends Controller
 {
@@ -99,12 +100,63 @@ class BlogController extends Controller
     public function indexAdmin()
     {
 
-//        $blog = Blog::all(); // elequent orm
+        //        $blog = Blog::all(); // elequent orm
 
-        $blog = Blog::orderBy('created_at','desc')->paginate();
-//        dd($blog);
-//        dd($blog);
+        $blog = Blog::orderBy('created_at', 'desc')->paginate();
+        //        dd($blog);
+        //        dd($blog);
 
-        return view('admin.blog.index',compact('blog'));
+        return view('admin.blog.index', compact('blog'));
     }
+
+    // create form
+    public function createAdmin()
+    {
+
+        return view('admin.blog.createOrUpdate');
+    }
+
+
+    // insert into database
+    public function storeAdmin(Request $request)
+    {
+        $request->validate([
+            'rate' => 'required',
+            'name' => 'required',
+            'comment' => 'required'
+        ]);
+
+        $data = $request->all();
+
+
+        Blog::create($data);
+
+        return redirect()->back()->with('success', __('messages.comment-send-success'));
+
+    }
+
+    //show edit form
+    public function editAdmin(Blog $blog)
+    {
+
+        return view('admin.comment.edit', compact('blog'));
+    }
+
+    // update
+    public function updateAdmin(Request $request, Blog $blog)
+    {
+
+        $blog->update($request->all());
+
+        return redirect()->route('comment.index')->with('success', 'ok');
+    }
+
+    //delete
+    public function destroyAdmin(Blog $blog)
+    {
+        $blog->delete();
+
+        return redirect()->route('comment.index')->with('success', Lang::get('messages.deleted'));
+    }
+
 }

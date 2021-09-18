@@ -24,4 +24,10 @@ class IndexController extends Controller
 
         return view('index',compact('news','banners','blogs') );
     }
+
+
+    public function indexAdmin()
+    {
+        return view('admin.index');
+    }
 }
