@@ -45,15 +45,15 @@
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="/blog">Blog</a>
+                            <a class="nav-link" href="{{ url('blog') }}">Über uns</a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="/news">News</a>
+                            <a class="nav-link" href="{{ url('news') }}">-</a>
                         </li>
 
                         <li class="nav-item">
-                        <a class="nav-link" href="/kontakt">Kontakt</a>
+                        <a class="nav-link" href="{{ url('komtakt') }}">Kontakt</a>
                     </li>
 
 
@@ -102,13 +102,6 @@
           <!--Grid row-->
         </div>
         <!-- Grid container -->
-
-        <!-- Copyright -->
-        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-          © 2020 Copyright:
-          <a class="text-dark" href="https://mdbootstrap.com/">MDBootstrap.com</a>
-        </div>
-        <!-- Copyright -->
       </footer>
 
 </body>
