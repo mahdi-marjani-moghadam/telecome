@@ -14,9 +14,10 @@
 
 <body>
 
+    {{--Menu--}}
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container">
-            <img src="{{  Storage::url('logo.png') }}" height="50" class="logo" alt="">
+            <img src="{{ Storage::url('logo.png') }}" alt="" width="80" height="50">
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                 aria-expanded="false" aria-label="Toggle navigation">
