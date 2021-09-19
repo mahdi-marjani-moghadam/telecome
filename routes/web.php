@@ -32,6 +32,9 @@ Route::get('kontact', function () {
 //Route::get('news', [,'index']);
 
 
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth'])->name('dashboard');
 
 require __DIR__ . '/auth.php';
 
@@ -40,7 +43,14 @@ require __DIR__ . '/auth.php';
 //Route::get('news', [,'index']);
 
 
-Route::prefix('admin')->group(function () {
+
+
+
+require __DIR__ . '/adminAuth.php';
+
+
+
+Route::prefix('admin')->middleware('admin')->group(function () {
 
     Route::get('/', [IndexController::class, 'indexAdmin']);
 
@@ -50,4 +60,5 @@ Route::prefix('admin')->group(function () {
     Route::get('blog/{blog}', [BlogController::class, 'editAdmin'])->name('admin.blog.edit'); // form edit
     Route::patch('blog/{blog}', [BlogController::class, 'updateAdmin'])->name('admin.blog.update'); // edit
     Route::delete('blog/{blog}', [BlogController::class, 'destroyAdmin'])->name('admin.blog.destroy'); // delete
+
 });
