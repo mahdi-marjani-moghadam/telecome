@@ -50,7 +50,7 @@ require __DIR__ . '/adminAuth.php';
 
 
 
-Route::prefix('admin')->middleware('admin')->group(function () {
+Route::prefix('admin')->middleware('auth:admin')->group(function () {
 
     Route::get('/', [IndexController::class, 'indexAdmin']);
 

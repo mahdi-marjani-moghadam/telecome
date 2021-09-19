@@ -19,6 +19,7 @@
     </head>
     <body>
         <div class="font-sans text-gray-900 antialiased admin">
+            <h1>admin</h1>
             {{ $slot }}
         </div>
     </body>
