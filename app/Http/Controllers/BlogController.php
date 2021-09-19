@@ -15,9 +15,9 @@ class BlogController extends Controller
      */
     public function index()
     {
+        $blogs = Blog::orderBy('id','desc')->paginate(10);
 
-
-        return view('blogIndex');
+        return view('blogIndex',compact('blogs'));
     }
 
     /**
@@ -49,7 +49,7 @@ class BlogController extends Controller
      */
     public function show(Blog $blog)
     {
-        dd(1);
+
         return view('blogShow',compact('blog'));
     }
 
@@ -122,9 +122,7 @@ class BlogController extends Controller
     public function storeAdmin(Request $request)
     {
         $request->validate([
-            'rate' => 'required',
-            'name' => 'required',
-            'comment' => 'required'
+            'title' => 'required',
         ]);
 
         $data = $request->all();
@@ -132,7 +130,7 @@ class BlogController extends Controller
 
         Blog::create($data);
 
-        return redirect()->back()->with('success', __('messages.comment-send-success'));
+        return redirect()->route('admin.blog.index')->with('success', __('messages.comment-send-success'));
 
     }
 

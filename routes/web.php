@@ -28,9 +28,11 @@ Route::get('kontact', function () {
     return 'Kontakt';
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+//Route::get('blog', [,'index']);
+//Route::get('news', [,'index']);
+
+
+Route::prefix('admin')->group(function () {
 
 require __DIR__ . '/auth.php';
 
