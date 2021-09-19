@@ -14,7 +14,8 @@ class SimcardsController extends Controller
      */
     public function index()
     {
-        //
+        return 'hallo mahdi';
+//            view('simkarte');
     }
 
     /**
