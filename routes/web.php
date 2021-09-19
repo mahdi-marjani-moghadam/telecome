@@ -44,7 +44,7 @@ Route::prefix('admin')->group(function () {
 
     Route::get('/', [IndexController::class, 'indexAdmin']);
 
-    Route::get('blog', [BlogController::class, 'indexAdmin']);
+    Route::get('blog', [BlogController::class, 'indexAdmin'])->name('admin.blog.index');
     Route::get('blog/create', [BlogController::class, 'createAdmin'])->name('admin.blog.create'); // form add
     Route::post('blog/create', [BlogController::class, 'storeAdmin'])->name('admin.blog.store'); // add
     Route::get('blog/{blog}', [BlogController::class, 'editAdmin'])->name('admin.blog.edit'); // form edit
