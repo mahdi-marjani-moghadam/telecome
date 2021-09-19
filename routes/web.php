@@ -8,20 +8,33 @@ use Illuminate\Support\Facades\Route;
 
 
 
-Route::prefix('/')->group(function () {
 
-    Route::get('', [IndexController::class, 'index']);
+Route::get('/', [IndexController::class, 'index']);
 
-    Route::get('aboutus', [AboutusController::class, 'index']);
-    Route::get('blog/{blog}', [BlogController::class, 'show']);
-    Route::get('simkarte', [\App\Http\Controllers\SimcardsController::class, 'index']);
-    Route::get('anmeldung', function () {
-        return 'Anmeldung';
-    });
-    Route::get('kontakt', function () {
-        return 'Kontakt';
-    });
+Route::get('aboutus', [AboutusController::class, 'index']);
+Route::get('blog/{blog}', [BlogController::class, 'show']);
+Route::get('blog', [BlogController::class, 'index']);
+
+Route::get('start', function () {
+    return 'Startseite';
 });
+Route::get('simkarte', function () {
+    return 'Simmmm';
+});
+Route::get('anmeldung', function () {
+    return 'Anmeldung';
+});
+Route::get('kontact', function () {
+    return 'Kontakt';
+});
+
+//Route::get('blog', [,'index']);
+//Route::get('news', [,'index']);
+
+
+
+require __DIR__ . '/auth.php';
+
 
 //Route::get('blog', [,'index']);
 //Route::get('news', [,'index']);
