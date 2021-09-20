@@ -52,7 +52,7 @@ require __DIR__ . '/adminAuth.php';
 
 Route::prefix('admin')->middleware('auth:admin')->group(function () {
 
-    Route::get('/', [IndexController::class, 'indexAdmin']);
+    Route::get('/', [IndexController::class, 'indexAdmin'])->name('admin.dashboard');
 
     Route::get('blog', [BlogController::class, 'indexAdmin'])->name('admin.blog.index');
     Route::get('blog/create', [BlogController::class, 'createAdmin'])->name('admin.blog.create'); // form add
