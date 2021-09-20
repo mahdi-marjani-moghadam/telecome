@@ -22,9 +22,16 @@
                                             <br>
                                             {{ $item['description'] }}
 
-                                            <div>
-                                                <a href="" class="btn btn-info ">Edit</a>
-                                                <a href="" class="btn btn-danger ">X</a>
+                                            <div class="d-flex">
+                                                <a href="{{ route('admin.blog.edit', $item['id']) }}" class="btn btn-info ">Edit</a>
+
+                                                <form  class="mx-1"  action="{{ route('admin.blog.destroy', $item['id']) }}"
+                                                    method="POST">
+                                                    @method('DELETE')
+                                                   @csrf
+                                                   <button class="btn btn-danger">X</button>
+                                               </form>
+
                                             </div>
                                         </div>
                                     </div>

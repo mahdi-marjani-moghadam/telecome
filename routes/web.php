@@ -15,14 +15,16 @@ Route::get('aboutus', [AboutusController::class, 'index']);
 Route::get('blog/{blog}', [BlogController::class, 'show']);
 Route::get('blog', [BlogController::class, 'index']);
 
-
+Route::get('start', function () {
+    return 'Startseite';
+});
 Route::get('simkarte', function () {
     return 'Simmmm';
 });
 Route::get('anmeldung', function () {
     return 'Anmeldung';
 });
-Route::get('kontakt', function () {
+Route::get('kontact', function () {
     return 'Kontakt';
 });
 
@@ -37,7 +39,8 @@ Route::get('/dashboard', function () {
 require __DIR__ . '/auth.php';
 
 
-
+//Route::get('blog', [,'index']);
+//Route::get('news', [,'index']);
 
 
 
@@ -58,13 +61,4 @@ Route::prefix('admin')->middleware('auth:admin')->group(function () {
     Route::patch('blog/{blog}', [BlogController::class, 'updateAdmin'])->name('admin.blog.update'); // edit
     Route::delete('blog/{blog}', [BlogController::class, 'destroyAdmin'])->name('admin.blog.destroy'); // delete
 
-
-
-//News-group
-  /*   Route::get('news', [\App\Http\Controllers\NewsController::class, 'indexAdmin'])->name('admin.news.index');
-    Route::get('news/create', [\App\Http\Controllers\NewsController::class, 'createAdmin'])->name('admin.news.create');
-    Route::get('news/create', [\App\Http\Controllers\NewsController::class, 'storeAdmin'])->name('admin.news.store');
-    Route::get('news/{news}', [\App\Http\Controllers\NewsController::class, 'editAdmin'])->name('admin.news.edit');
-    Route::get('news/{news}', [\App\Http\Controllers\NewsController::class, 'updateAdmin'])->name('admin.news.update');
-    Route::get('news/{news}', [\App\Http\Controllers\NewsController::class, 'destroy'])->name('admin.news.destroy'); */
 });

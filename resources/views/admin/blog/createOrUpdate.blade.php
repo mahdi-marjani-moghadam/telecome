@@ -32,8 +32,8 @@
                                     <div class="col-md-3  col-sm-3 form-group">
                                         {{ __('Title') }}:
 
-                                        <x-input name='title' class="form-control" type="text" required>
-                                            {{ old('title', $blog->title ?? '') }}
+                                        <x-input name='title' class="form-control" type="text" required value="{{ old('title', $blog->title ?? '') }}">
+
                                         </x-input>
                                         <span class="text-danger">{{ $errors->first('title') }}</span>
 
@@ -47,7 +47,7 @@
                                         {{ __('Description') }}:
 
                                         <x-textarea name="description" cols="30" class="form-control">
-                                            {{ old('description', $company->description ?? '') }}
+                                            {{ old('description', $blog->description ?? '') }}
                                         </x-textarea>
 
                                         {{-- <textarea id="description" name="description" class="form-control" cols="30"
