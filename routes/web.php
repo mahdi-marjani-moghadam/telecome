@@ -54,11 +54,14 @@ Route::prefix('admin')->middleware('auth:admin')->group(function () {
 
     Route::get('/', [IndexController::class, 'indexAdmin'])->name('admin.dashboard');
 
-    Route::get('blog', [BlogController::class, 'indexAdmin'])->name('admin.blog.index');
+
+    Route::get('blog', [BlogController::class, 'indexAdmin'])->name('admin.blog.index'); // blog list
     Route::get('blog/create', [BlogController::class, 'createAdmin'])->name('admin.blog.create'); // form add
     Route::post('blog/create', [BlogController::class, 'storeAdmin'])->name('admin.blog.store'); // add
-    Route::get('blog/{blog}', [BlogController::class, 'editAdmin'])->name('admin.blog.edit'); // form edit
-    Route::patch('blog/{blog}', [BlogController::class, 'updateAdmin'])->name('admin.blog.update'); // edit
+    Route::get('blog/edit/{blog}', [BlogController::class, 'editAdmin'])->name('admin.blog.edit'); // form edit
+    Route::patch('blog/edit/{blog}', [BlogController::class, 'updateAdmin'])->name('admin.blog.update'); // edit
     Route::delete('blog/{blog}', [BlogController::class, 'destroyAdmin'])->name('admin.blog.destroy'); // delete
+
+
 
 });

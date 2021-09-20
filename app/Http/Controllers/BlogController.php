@@ -138,7 +138,7 @@ class BlogController extends Controller
     public function editAdmin(Blog $blog)
     {
 
-        return view('admin.comment.edit', compact('blog'));
+        return view('admin.blog.createOrUpdate', compact('blog'));
     }
 
     // update
@@ -147,15 +147,16 @@ class BlogController extends Controller
 
         $blog->update($request->all());
 
-        return redirect()->route('comment.index')->with('success', 'ok');
+        return redirect()->route('admin.blog.index')->with('success', 'ok');
     }
 
     //delete
     public function destroyAdmin(Blog $blog)
     {
+
         $blog->delete();
 
-        return redirect()->route('comment.index')->with('success', Lang::get('messages.deleted'));
+        return redirect()->route('admin.blog.index')->with('success', Lang::get('messages.deleted'));
     }
 
 }
