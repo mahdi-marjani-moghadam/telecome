@@ -16,10 +16,16 @@
                             @foreach($blog as $item)
                                 <div class="row ">
                                     <div class="col ">
-                                        <div class="bg-light p-1 my-1">
+                                        <div class="bg-light p-1 my-1 d-flex align-items-center justify-content-between">
 
                                             {{ $item['title'] }}
+                                            <br>
                                             {{ $item['description'] }}
+
+                                            <div>
+                                                <a href="" class="btn btn-info ">Edit</a>
+                                                <a href="" class="btn btn-danger ">X</a>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
