@@ -1,18 +1,31 @@
 @extends('app')
 
 @section('content')
-    <div>
+<div class="container">
+    <div class="row ">
         @foreach($blogs as $item)
-        <h2>
-            {{ $item['title'] ?? ''}}
-        </h2>
-        <div class="p-3">
+            <div class="col-6 p-4">
 
-            {{ $item['description'] ?? ''}}
-        </div>
-            <div>
-                <a class="btn  btn-success" href="{{ url('blog',$item['id']) }}">More ...</a>
+                <div class="card-group ">
+                    <div class="card ">
+                        <img src="{{ Storage::url($item['image'])}}" class="card-img-top" alt="">
+                        <div class="card-body">
+                            <h4 class="card-title"> {{ $item['title'] ?? ''}}</h4>
+                            <p class="card-text" >{{ $item['description'] ?? ''}}</p>
+                            <div>
+                                <a class="btn btn-primary" href="{{ url('blog',$item['id']) }}" style="color: #37b3d0">Weitere infos</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+
             </div>
         @endforeach
     </div>
+</div>
+
+
+
 @endsection

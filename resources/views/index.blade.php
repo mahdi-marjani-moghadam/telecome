@@ -7,7 +7,7 @@
 <div class="row px-5" >
     <div class="col"  >
 
-        <div id="carouselExampleDark" class="carousel carousel-dark slide px-5 mx-5 r" data-bs-ride="carousel" >
+        <div id="carouselExampleDark" class="carousel carousel-dark slide px-5 mx-5" data-bs-ride="carousel" >
             <div class="carousel-indicators ">
                 <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
                 <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -24,7 +24,6 @@
                         </div>
                     </div>
                 </div>
-
 
                 <div class="carousel-item px-5" data-bs-interval="2000" >
                     <img src="{{ Storage::url('carosel2.jpg') }}" class="d-block w-100 " alt="">
@@ -79,12 +78,12 @@
         @foreach($blogs as $item)
         <div class="col-6 ">
 
-            <div class="card " style="width: 30rem; left:70px;">
+            <div class="card " style="width: 30rem; left:80px;">
                 <div class="card-body  align-self-center ">
                     <h5 class="card-title">{{ $item['title'] }}</h5>
                     <img style="width: 100%" src="{{ Storage::url($item['image']) }}" alt="">
                     <p class="card-text p-3">{{ $item['description'] }}</p>
-                    <a href="{{ url('blog',$item['id']) }}" class="weitere infos p-3" style="color: #37b3d0">Mehr erfahren</a>
+                    <a href="{{ url('blog',$item['id']) }}" class="btn btn-link" style="color: #37b3d0">Mehr erfahren</a>
                 </div>
             </div>
 

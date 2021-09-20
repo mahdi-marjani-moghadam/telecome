@@ -49,16 +49,8 @@
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url('news') }}">News</a>
-                    </li>
-
-                    <li class="nav-item">
                         <a class="nav-link" href="{{ url('kontakt') }}">Kontakt</a>
                     </li>
-
-
-
-
                 </ul>
             </div>
 
