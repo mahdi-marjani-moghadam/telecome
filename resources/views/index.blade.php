@@ -36,8 +36,7 @@
                                 <h5 class="text-uppercase fw-bolder fs-4 m-3" style="color: #19bee7">Beste Unterhaltung mit uns</h5>
                                 <p class="card-text">Alles aus einer Hand – unsere Kombi-Angebote zum Aktionspreis.</p>
 
-                                // TODO: link
-                                <a href="" class="card-link " style="color: #37b3d0">Zur Aktion Seite</a>
+                                <a href="{{ route('simkarte') }}" class="card-link " style="color: #37b3d0">Zur Aktion Seite</a>
                             </div>
                         </div>
                     </div>

@@ -32,7 +32,8 @@
                                     <div class="col-md-3  col-sm-3 form-group">
                                         {{ __('Title') }}:
 
-                                        <x-input name='title' class="form-control" type="text" required value="{{ old('title', $blog->title ?? '') }}">
+                                        <x-input name='title' class="form-control" type="text" required
+                                            value="{{ old('title', $blog->title ?? '') }}">
 
                                         </x-input>
                                         <span class="text-danger">{{ $errors->first('title') }}</span>
@@ -51,8 +52,14 @@
                                         </x-textarea>
 
                                         {{-- <textarea id="description" name="description" class="form-control" cols="30"
-                                            rows="10">{{ old('description', $company->description ?? '') }}</textarea> --}}
+                                        rows="10">{{ old('description', $company->description ?? '') }}</textarea> --}}
 
+                                    </div>
+
+                                    <div class="col-md-12  col-sm-12 form-group">
+                                        {{ __('Image') }}
+
+                                        <input type="file" name="image">
                                     </div>
                                 </div>
 

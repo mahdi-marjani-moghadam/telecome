@@ -17,7 +17,7 @@
                                 <div class="row ">
                                     <div class="col ">
                                         <div class="bg-light p-1 my-1 d-flex align-items-center justify-content-between">
-
+                                            <img src="{{ Storage::url($item['image']) }}" width="50" height="50"  alt="">
                                             {{ $item['title'] }}
                                             <br>
                                             {{ $item['description'] }}

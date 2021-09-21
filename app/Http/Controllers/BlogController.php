@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Blog;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Lang;
+use Illuminate\Support\Facades\Storage;
 
 class BlogController extends Controller
 {
@@ -15,9 +16,9 @@ class BlogController extends Controller
      */
     public function index()
     {
-        $blogs = Blog::orderBy('id','desc')->paginate(10);
+        $blogs = Blog::orderBy('id', 'desc')->paginate(10);
 
-        return view('blogIndex',compact('blogs'));
+        return view('blogIndex', compact('blogs'));
     }
 
     /**
@@ -50,7 +51,7 @@ class BlogController extends Controller
     public function show(Blog $blog)
     {
 
-        return view('blogShow',compact('blog'));
+        return view('blogShow', compact('blog'));
     }
 
     /**
@@ -127,11 +128,18 @@ class BlogController extends Controller
 
         $data = $request->all();
 
+        if ($request->hasFile('image')) {
+            $image      = $request->file('image')->store('public');
+            $data['image'] = $image;
+
+        }
 
         Blog::create($data);
 
-        return redirect()->route('admin.blog.index')->with('success', __('messages.comment-send-success'));
 
+
+
+        return redirect()->route('admin.blog.index')->with('success', __('messages.comment-send-success'));
     }
 
     //show edit form
@@ -145,7 +153,19 @@ class BlogController extends Controller
     public function updateAdmin(Request $request, Blog $blog)
     {
 
-        $blog->update($request->all());
+
+        // $image = $request->file('image');
+
+        $data = $request->all();
+        if ($request->hasFile('image')) {
+            $image      = $request->file('image')->store('public');
+            $data['image'] = $image;
+        }
+
+
+        $blog->update($data);
+
+
 
         return redirect()->route('admin.blog.index')->with('success', 'ok');
     }
@@ -158,5 +178,4 @@ class BlogController extends Controller
 
         return redirect()->route('admin.blog.index')->with('success', Lang::get('messages.deleted'));
     }
-
 }

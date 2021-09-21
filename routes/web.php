@@ -16,12 +16,14 @@ Route::get('/', [IndexController::class, 'index']);
 Route::get('aboutus', [AboutusController::class, 'index']);
 Route::get('blog/{blog}', [BlogController::class, 'show']);
 Route::get('blog', [BlogController::class, 'index']);
-Route::get('simkarte', [SimcardsController::class, 'index']);
+
+Route::get('simkarte', [SimcardsController::class, 'index'])->name('simkarte');
 
 Route::get('anmeldung', function () {
     return 'Anmeldung';
 });
-Route::get('kontakt', [ContactController::class, 'index']);
+Route::get('kontakt', [ContactController::class, 'index'])->name('kontakt');
+Route::post('kontakt', [ContactController::class, 'store'])->name('kontakt.store');
 
 
 

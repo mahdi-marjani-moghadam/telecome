@@ -35,7 +35,19 @@ class ContactController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        $request->validate([
+            'name' => 'required',
+            'mobile' => 'required',
+        ]);
+
+
+        $data = $request->all();
+
+        Contact::create($data);
+
+        return redirect()->route('kontakt')->with('success', __('success'));
+
     }
 
     /**
