@@ -1,7 +1,10 @@
 @extends('app')
 
 @section('content')
+
+<img src="{{Storage::url('blog.jpeg')}}" class="img-fluid" alt="">
 <div class="container">
+
     <div class="row ">
         @foreach($blogs as $item)
             <div class="col-6 p-4">
@@ -10,10 +13,10 @@
                     <div class="card ">
                         <img src="{{ Storage::url($item['image'])}}" class="card-img-top" alt="">
                         <div class="card-body">
-                            <h4 class="card-title"> {{ $item['title'] ?? ''}}</h4>
-                            <p class="card-text" >{{ $item['description'] ?? ''}}</p>
+                            <h4 class="card-title fs-5 fw-bold "> {{ $item['title'] ?? ''}}</h4>
+                            <p class="card-text mx-3" >{{ $item['description'] ?? ''}}</p>
                             <div>
-                                <a class="btn btn-primary" href="{{ url('blog',$item['id']) }}" style="color: #37b3d0">Weitere infos</a>
+                                <a class="btn btn-primary my-4" href="{{ url('blog',$item['id']) }}" >Weitere infos</a>
                             </div>
                         </div>
                     </div>

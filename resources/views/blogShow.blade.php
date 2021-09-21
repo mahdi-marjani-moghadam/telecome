@@ -2,6 +2,7 @@
 
 @section('content')
     <div>
+        <img src="{{ $blog['image'] ?? ''}}" alt="">
         <h1>
             {{ $blog['title'] ?? ''}}
         </h1>

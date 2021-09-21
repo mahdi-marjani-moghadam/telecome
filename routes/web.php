@@ -3,6 +3,8 @@
 use App\Http\Controllers\AboutusController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\IndexController;
+use App\Http\Controllers\ContactController;
+use App\Http\Controllers\SimcardsController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -14,22 +16,14 @@ Route::get('/', [IndexController::class, 'index']);
 Route::get('aboutus', [AboutusController::class, 'index']);
 Route::get('blog/{blog}', [BlogController::class, 'show']);
 Route::get('blog', [BlogController::class, 'index']);
+Route::get('simkarte', [SimcardsController::class, 'index']);
 
-Route::get('start', function () {
-    return 'Startseite';
-});
-Route::get('simkarte', function () {
-    return 'Simmmm';
-});
 Route::get('anmeldung', function () {
     return 'Anmeldung';
 });
-Route::get('kontact', function () {
-    return 'Kontakt';
-});
+Route::get('kontakt', [ContactController::class, 'index']);
 
-//Route::get('blog', [,'index']);
-//Route::get('news', [,'index']);
+
 
 
 Route::get('/dashboard', function () {
