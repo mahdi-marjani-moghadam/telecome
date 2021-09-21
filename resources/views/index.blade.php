@@ -94,13 +94,17 @@
     <div class="container p-5 ">
         <div class="row ">
 
+            <div class=" d-flex justify-content-center">
+                <div class="row px-5">
+
+
             @foreach($blogs as $item)
-            <div class="col">
-                <div class="col-md-6 offset-md-3 center">
+            <div class="col mx-3">
+                <div class=" center">
                     <div class="card align-items-center">
                         <div class="card-body" >
                             <h1 class="card-title fs-5">{{ $item['title'] }}</h1>
-                            <img src="{{ Storage::url($item['image']) }}" alt="">
+                            <img src="{{ Storage::url($item['image']) }}" style="object-fit: cover; height: 300px;" alt="">
                             <p class="card-text p-3">{{ $item['description'] }}</p>
                             <a href="{{ url('blog',$item['id']) }}" class="btn btn-link" style="color: #37b3d0">Mehr erfahren</a>
                         </div>
@@ -109,6 +113,8 @@
             </div>
             @endforeach
 
+        </div>
+    </div>
         </div>
     </div>
 

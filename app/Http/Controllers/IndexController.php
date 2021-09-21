@@ -18,7 +18,7 @@ class IndexController extends Controller
         );
 
         //todo blog
-        $blogs = Blog::limit(2)->get();
+        $blogs = Blog::limit(3)->get();
 
         return view('index',compact('news','banners','blogs') );
     }
