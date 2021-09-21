@@ -154,9 +154,9 @@ class BlogController extends Controller
     {
 
 
-        // $image = $request->file('image');
-
         $data = $request->all();
+
+
         if ($request->hasFile('image')) {
             $image      = $request->file('image')->store('public');
             $data['image'] = $image;
