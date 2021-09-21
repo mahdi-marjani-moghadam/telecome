@@ -37,7 +37,7 @@
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url('anmeldung') }}">Anmeldung</a>
+                        <a class="nav-link" href="{{ url('login') }}">Anmeldung</a>
                     </li>
 
                     <li class="nav-item">
