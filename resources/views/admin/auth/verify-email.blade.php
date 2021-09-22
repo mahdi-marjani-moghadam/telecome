@@ -2,7 +2,7 @@
     <x-auth-card>
         <x-slot name="logo">
             <a href="/">
-                <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
+                <img src="{{ Storage::url('logo.png') }}" alt="" width="80" height="50">
             </a>
         </x-slot>
 
@@ -36,4 +36,4 @@
             </form>
         </div>
     </x-auth-card>
-</x-guest-layout>
+</x-guest-admin-layout>
