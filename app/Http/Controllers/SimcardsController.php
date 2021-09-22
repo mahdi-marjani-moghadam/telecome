@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\NewsController;
+use App\Models\News;
 use Illuminate\Http\Request;
 
 class SimcardsController extends Controller
@@ -14,7 +15,9 @@ class SimcardsController extends Controller
      */
     public function index()
     {
-        return view('simcardsIndex');
+        $news = News::limit(2)->get();
+
+        return view('simcardsIndex',compact('news'));
     }
 
     /**

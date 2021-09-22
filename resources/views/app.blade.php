@@ -41,9 +41,6 @@
                         <a class="nav-link" href="{{ url('blog') }}">Blog</a>
                     </li>
 
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ url('login') }}">Anmeldung</a>
-                    </li>
 
                     <li class="nav-item">
                         <a class="nav-link" href="{{ url('kontakt') }}">Kontakt</a>
@@ -52,6 +49,20 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{{ url('aboutus') }}">Über uns</a>
                     </li>
+
+                    @if (Auth::guest())
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url('register') }}">Register</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url('login') }}">Anmeldung</a>
+                    </li>
+                    @else
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url('dashboard') }}">dashboard</a>
+                    </li>
+                    @endif
                 </ul>
             </div>
 

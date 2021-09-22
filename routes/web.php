@@ -12,10 +12,11 @@ use Illuminate\Support\Facades\Route;
 
 
 
-Route::get('/', [IndexController::class, 'index']);
+Route::get('/', [IndexController::class, 'index'])->name('home');
 
 Route::get('aboutus', [AboutusController::class, 'index']);
-Route::get('news/{news}', [BlogController::class, 'show']);
+Route::get('news/{news}', [NewsController::class, 'show']);
+Route::get('news', [NewsController::class, 'index']);
 Route::get('blog/{blog}', [BlogController::class, 'show']);
 Route::get('blog', [BlogController::class, 'index']);
 Route::get('simkarte', [SimcardsController::class, 'index'])->name('simkarte');
