@@ -46,7 +46,7 @@ class ContactController extends Controller
 
         Contact::create($data);
 
-        return redirect()->route('kontakt')->with('success', __('success'));
+        return redirect()->route('kontakt')->with('success', __('Ihre Nachricht wurde erfolgreich versendet. Vielen Dank!'));
 
     }
 

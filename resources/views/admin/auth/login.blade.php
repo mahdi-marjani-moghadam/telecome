@@ -1,9 +1,11 @@
-<x-guest-admin-layout>
+<x-guest-layout>
     <x-auth-card>
         <x-slot name="logo">
             <a href="/">
-                <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
+                <img src="{{ Storage::url('logo.png') }}" alt="" width="80" height="50">
             </a>
+
+
         </x-slot>
 
         <!-- Session Status -->
@@ -15,8 +17,10 @@
         <form method="POST" action="{{ route('admin.login') }}">
             @csrf
 
+            <x-label value="Admin Login "  class="text-center fw-bold " />
             <!-- Email Address -->
             <div>
+
                 <x-label for="email" :value="__('Email')" />
 
                 <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus />

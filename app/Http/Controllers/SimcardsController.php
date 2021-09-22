@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Simcards;
+use App\Http\Controllers\NewsController;
 use Illuminate\Http\Request;
 
 class SimcardsController extends Controller

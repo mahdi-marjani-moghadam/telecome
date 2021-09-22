@@ -33,23 +33,24 @@
                             ✔Allnet-Flat<br>
                             ✔Telefon- & SMS-Flat in alle dt. Netze<br></p>
                         <p class="card-text p-5">mtl. 45,00 €</p>
-                        <a href="#" class="btn btn-primary">Zum Angebot</a>
+                        <a href="{{ url('news',$news['id'==3]) }}" class="btn btn-primary">Zum Angebot</a>
                     </div>
                 </div>
             </div>
             <div class="col-6">
 
                 <div class="card" style="background-color: #e6f6ff; ">
-                    <div class="card-header">
+                    <div class="card-header ">
                         Internet Startpacket
                     </div>
-                    <div class="card-body">
-                        <p class="card-text">4 GB Internet<br>
+                    <div class="card-body p-5">
+                        <p class="card-text">
+                            <span class="fs-4 " 4 GB Internet/><br>
                             ✔Surfen in der EU<br>
                             ✔Internettelefonie (VoIP)<br>
                             ✔keine Vertragsbindung<br></p>
-                        <p class="card-text p-5">mtl. 25,00 €</p>
-                        <a href="#" class="btn btn-primary">Zum Angebot</a>
+                        <p class="text-end p-3 fw-bold ">mtl. 25,00 €</p>
+                        <a href="{{ url('news',$news['id'==4]) }}" class="btn btn-primary justify-content-center">Zum Angebot</a>
                     </div>
                 </div>
             </div>

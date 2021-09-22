@@ -18,6 +18,7 @@
     {{-- Menu --}}
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container">
+
             <img src="{{ Storage::url('logo.png') }}" alt="" width="80" height="50">
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -37,19 +38,19 @@
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url('login') }}">Anmeldung</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ url('aboutus') }}">Über uns</a>
-                    </li>
-
-                    <li class="nav-item">
                         <a class="nav-link" href="{{ url('blog') }}">Blog</a>
                     </li>
 
                     <li class="nav-item">
+                        <a class="nav-link" href="{{ url('login') }}">Anmeldung</a>
+                    </li>
+
+                    <li class="nav-item">
                         <a class="nav-link" href="{{ url('kontakt') }}">Kontakt</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url('aboutus') }}">Über uns</a>
                     </li>
                 </ul>
             </div>

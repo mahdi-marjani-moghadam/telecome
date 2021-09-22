@@ -3,24 +3,20 @@
 namespace App\Http\Controllers;
 
 use App\Models\Blog;
+use App\Models\News;
 
 class IndexController extends Controller
 {
     public function index(){
 
-        //todo banner
-        $banners = array('/tt/banner.jpg','/tt/banner2.jpg');
+        // news
+        $news = News::limit(2)->get();
 
-        //todo new
-        $news = array(
-            array('id'=>1,'title'=>'news1','description'=>'test'),
-            array('id'=>2,'title'=>'news2','description'=>'test')
-        );
 
-        //todo blog
+        // blog
         $blogs = Blog::limit(3)->get();
 
-        return view('index',compact('news','banners','blogs') );
+        return view('index',compact('news','blogs') );
     }
 
 
