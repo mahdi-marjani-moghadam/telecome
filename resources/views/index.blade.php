@@ -7,11 +7,17 @@
 
 <div class="center " >
     <style>
+        *{
+            padding: 0;
+        }
         .col-background{
             background-image: linear-gradient(180deg ,#229dd4, #dbe7f3);
             height: 290px;
-            weight: 1600px;
             position: absolute;
+            padding: 0;
+        }
+        .row{
+            --bs-gutter-x: 0;
         }
         .carousel{
             padding-left: 150px;
@@ -35,9 +41,9 @@
                 <div class="carousel-item active " data-bs-interval="10000">
                     <div class="card align-self-center card1" >
                         <img src="{{ Storage::url('carosel1.jpg') }}" class="d-block w-100"  alt="">
-                        <div class="card-body p-4">
-                            <h5 class="text-uppercase fw-bolder fs-4 " style="color: #19bee7">Beste Unterhaltung mit uns</h5>
-                            <p class="card-text">Alles aus einer Hand – unsere Kombi-Angebote zum Aktionspreis.</p>
+                        <div class="card-body">
+                            <h4 class="text-uppercase fw-bolder fs-4 " style="color: #19bee7">Beste Unterhaltung mit uns</h4>
+                            <span class="card-text">Alles aus einer Hand – unsere Kombi-Angebote zum Aktionspreis.</span>
 
                             <a href="{{ route('simkarte') }}" class="card-link " style="color: #37b3d0">Zur Aktion Seite</a>
                         </div>
